@@ -1,0 +1,45 @@
+name = "CliffordSynthesisComplexity"
+version = "0.1.0"
+defaultTargets = ["CliffordFrontier"]
+testDriver = "CliffordTests"
+lintDriver = "batteries/runLinter"
+
+[leanOptions]
+weak.linter.mathlibStandardSet = true
+weak.linter.flexible = true
+weak.linter.unicodeLinter = false
+weak.linter.pythonStyle = false
+weak.linter.allScriptsDocumented = false
+weak.linter.checkInitImports = false
+autoImplicit = false
+
+[[require]]
+name = "cslib-frontier"
+git = "https://github.com/cslib-community/cslib-frontier"
+rev = "33c95106dcbe8a3440cd61f27ca44e88e801117e"
+
+[[lean_lib]]
+name = "CliffordComplexity"
+
+[[lean_lib]]
+name = "GridProblems"
+
+[[lean_lib]]
+name = "CliffordSynthesis"
+
+[[lean_lib]]
+name = "CliffordFrontier"
+
+[[lean_lib]]
+name = "Specification"
+roots = ["Specification"]
+
+[[lean_lib]]
+name = "CliffordTests"
+roots = []
+globs = ["CliffordTests.+"]
+# The library-wide axiom audit reads private declarations.
+allowNonModules = true
+
+[[lean_lib]]
+name = "GridHardness"
